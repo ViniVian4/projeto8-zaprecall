@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import TelaComeco from "./TelaComeco";
+import App from "./App";
 import React, { Component } from 'react'
 
-ReactDOM.render(<TelaComeco />, document.querySelector(".root"));
+ReactDOM.render(<App />, document.querySelector(".root"));

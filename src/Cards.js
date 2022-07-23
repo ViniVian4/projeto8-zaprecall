@@ -17,55 +17,39 @@ function shuffle(array) {
     return array;
   }
 
-export default function Cards() {
+export default function Cards({increaseAnswered}) {
     const cards = [
         {
             pergunta: "O que é JSX?",
-            resposta: "Uma extensão de linguagem do JavaScript",
-            estado: "botao",
-            memoria: ""
+            resposta: "Uma extensão de linguagem do JavaScript"
         },
         {
             pergunta: "O React é __ ",
-            resposta: "Uma biblioteca JavaScript para construção de interfaces",
-            estado: "botao",
-            memoria: ""
+            resposta: "Uma biblioteca JavaScript para construção de interfaces"
         },
         {
             pergunta: "Componentes devem iniciar com __",
-            resposta: "Letra maiúscula",
-            estado: "botao",
-            memoria: ""
+            resposta: "Letra maiúscula"
         },
         {
             pergunta: "Podemos colocar __ dentro do JSX",
-            resposta: "Expressões",
-            estado: "botao",
-            memoria: ""
+            resposta: "Expressões"
         },
         {
             pergunta: "O ReactDOM nos ajuda __ ",
-            resposta: "Interagindo com a DOM para colocar componentes React na mesma",
-            estado: "botao",
-            memoria: ""
+            resposta: "Interagindo com a DOM para colocar componentes React na mesma"
         },
         {
             pergunta: "Usamos o npm para __ ",
-            resposta: "Gerenciar os pacotes necessários e suas dependências",
-            estado: "botao",
-            memoria: ""
+            resposta: "Gerenciar os pacotes necessários e suas dependências"
         },
         {
             pergunta: "Usamos props para __",
-            resposta: "Passar diferentes informações para componentes",
-            estado: "botao",
-            memoria: ""
+            resposta: "Passar diferentes informações para componentes"
         },
         {
             pergunta: "Usamos estado (state) para __",
-            resposta: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente",
-            estado: "botao",
-            memoria: ""
+            resposta: "Dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"
         }
     ];
 
@@ -75,7 +59,7 @@ export default function Cards() {
         <div class="cards">
             {
                 shuffledCards.map((card, key) => (
-                    <Card card={card} index={key} />
+                    <Card card={card} index={key} increaseAnswered={increaseAnswered} />
                 ))
             }
         </div>

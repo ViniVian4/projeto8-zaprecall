@@ -18,7 +18,7 @@ function shuffle(array) {
   }
 
 export default function Cards({increaseAnswered, addAnswer}) {
-    const cards = [
+    const deck = [
         {
             pergunta: "O que é JSX?",
             resposta: "Uma extensão de linguagem do JavaScript"
@@ -53,12 +53,15 @@ export default function Cards({increaseAnswered, addAnswer}) {
         }
     ];
 
-    const shuffledCards = shuffle(cards);
+    let shuffledDeck = shuffle(deck);
+    shuffledDeck = [shuffledDeck[0], shuffledDeck[1], shuffledDeck[2], shuffledDeck[3]];
+
+    const [cards] = React.useState(shuffledDeck);
     
     return (
         <div class="cards">
             {
-                shuffledCards.map((card, key) => (
+                cards.map((card, key) => (
                     <Card card={card} index={key} increaseAnswered={increaseAnswered} addAnswer={addAnswer} />
                 ))
             }

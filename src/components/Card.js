@@ -1,12 +1,12 @@
 import React from 'react';
 
-import play from "./assets/play.svg";
-import setinha from "./assets/setinha.png";
-import right from "./assets/right.svg";
-import question from "./assets/question.svg";
-import wrong from "./assets/Wrong.svg";
+import play from "../assets/play.svg";
+import setinha from "../assets/setinha.png";
+import right from "../assets/right.svg";
+import question from "../assets/question.svg";
+import wrong from "../assets/Wrong.svg";
 
-export default function Card({ card, index, increaseAnswered }) {
+export default function Card({ card, index, increaseAnswered, addAnswer }) {
     const { pergunta, resposta } = card;
 
     const [isHidden, setIshidden] = React.useState(true);
@@ -29,18 +29,21 @@ export default function Card({ card, index, increaseAnswered }) {
             setIcon(wrong);
             setIshidden(true);
             increaseAnswered();
+            addAnswer(wrong);
         }
         else if (answer === "Zap"){
             setPclass("answered green");
             setIcon(right);
             setIshidden(true);
             increaseAnswered();
+            addAnswer(right);
         } 
         else if (answer === "Quase não lembrei") {
             setPclass("answered orange");
             setIcon(question);
             setIshidden(true);
             increaseAnswered();
+            addAnswer(question);
         }
     }
 

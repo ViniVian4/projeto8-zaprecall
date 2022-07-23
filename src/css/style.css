@@ -186,8 +186,60 @@ body h1 {
     background-color: #2FBE34;
 }
 
+.bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    padding: 3%;
+
+    min-height:  70px;
+    width: 100%;
+
+    background-color: #FFFFFF;
+}
+
+.bottom-bar > div {
+    margin-bottom: 10px;
+}
+
+.bottom-bar p {
+    font-size: 18px;
+}
+
+.bottom-bar img {
+    margin-right: 1%;
+}
+
+.quantity-answered {
+    display: flex;
+    justify-content: center;
+    
+    width: 100%;
+}
+
 .answered { 
     text-decoration: line-through;
+}
+
+.header-msg {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.header-msg p {
+    font-weight: bold;
+}
+
+.msg {
+    text-align: center;
 }
 
 .red {

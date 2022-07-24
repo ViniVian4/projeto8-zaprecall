@@ -2,7 +2,6 @@ import React from 'react';
 
 import "../css/style.css";
 
-import logo from "../assets/logo.png";
 import LogoComeco from './LogoComeco';
 
 export default function TelaComeco({mudaTela}) {

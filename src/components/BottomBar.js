@@ -16,7 +16,7 @@ export default function BottomBar({ numberAnswered, answered }) {
     }
 
     function printMsg() {
-        if (numberAnswered === 8) {
+        if (numberAnswered === 4) {
             let win = true;
             for (let i = 0; i < answered.length; i++)
                 if (wrong === answered[i])
@@ -58,7 +58,7 @@ export default function BottomBar({ numberAnswered, answered }) {
         <div class="bottom-bar">
             {printMsg()}
             <div class="quantity-answered">
-                <p>{numberAnswered}/8 CONCLUÍDOS</p>
+                <p>{numberAnswered}/4 CONCLUÍDOS</p>
             </div>
             {printAnswers()}
         </div>

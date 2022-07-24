@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import App from "./components/App";
-import React, { Component } from 'react'
+import React from 'react'
 
 import "./css/style.css";
 import "./css/reset.css";

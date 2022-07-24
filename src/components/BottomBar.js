@@ -1,18 +1,10 @@
 import React from 'react';
+import Answers from './Answers';
 
 import Msg from './Msg';
+import RestartButton from './RestartButton';
 
 export default function BottomBar({ numberAnswered, answered, setRestart }) {
-    function printAnswers() {        
-        if (answered.length > 0)
-            return (answered.map(answer => (
-                <img src={answer} />
-            )));
-        else
-            return;
-
-    }
-
     function printRestartButton() {
         if (numberAnswered === 4)
             return (
@@ -26,8 +18,8 @@ export default function BottomBar({ numberAnswered, answered, setRestart }) {
             <div class="quantity-answered">
                 <p>{numberAnswered}/4 CONCLUÍDOS</p>
             </div>
-            {printAnswers()}
-            {printRestartButton()}
+            <Answers answered={answered} />
+            <RestartButton numberAnswered={numberAnswered} setRestart={setRestart} />
         </div>
     )
 }

@@ -16,7 +16,7 @@ export default function App() {
             {tela ? (
                 <TelaComeco mudaTela={mudaTela} />
             ) : (
-                <TelaJogo />
+                <TelaJogo mudaTela={mudaTela} />
             )}
         </>
     ) 

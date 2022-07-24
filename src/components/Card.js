@@ -6,13 +6,20 @@ import right from "../assets/right.svg";
 import question from "../assets/question.svg";
 import wrong from "../assets/Wrong.svg";
 
-export default function Card({ card, index, increaseAnswered, addAnswer }) {
+export default function Card({ card, index, increaseAnswered, addAnswer, restart }) {
     const { pergunta, resposta } = card;
 
     const [isHidden, setIshidden] = React.useState(true);
     const [isQuestion, setIsquestion] = React.useState(true);
     const [icon, setIcon] = React.useState(play);
     const [pClass, setPclass] = React.useState("");
+
+    if (restart) {
+        setIshidden(true);
+        setIsquestion(true);
+        setIcon(play);
+        setPclass("");
+    }
 
     function showCard() {
         if (icon === play)

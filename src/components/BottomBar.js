@@ -1,11 +1,9 @@
 import React from 'react';
 
-import wrong from "../assets/Wrong.svg";
-import party from "../assets/party.png";
-import sad from "../assets/sad.png"
+import Msg from './Msg';
 
-export default function BottomBar({ numberAnswered, answered }) {
-    function printAnswers() {
+export default function BottomBar({ numberAnswered, answered, setRestart }) {
+    function printAnswers() {        
         if (answered.length > 0)
             return (answered.map(answer => (
                 <img src={answer} />
@@ -15,52 +13,21 @@ export default function BottomBar({ numberAnswered, answered }) {
 
     }
 
-    function printMsg() {
-        if (numberAnswered === 4) {
-            let win = true;
-            for (let i = 0; i < answered.length; i++)
-                if (wrong === answered[i])
-                    win = false;
-
-
-            if (win)
-                return (
-                    <>
-                        <div class="header-msg">
-                            <img align="left" src={party} />
-                            <p>Parabéns!</p>
-                        </div>
-                        <div class="msg">
-                            <p>Você não esqueceu de nenhum flashcard!</p>
-                        </div>
-                    </>
-                )
-            else
-                return (
-                    <>
-                        <div class="header-msg">
-                            <img align="left" src={sad} />
-                            <p>Putz...</p>
-                        </div>
-                        <div class="msg">
-                            <p>Ainda faltam alguns...
-                                Mas não desanime!</p>
-                        </div>
-                    </>
-                )
-        }
-        else
-            return;
-
+    function printRestartButton() {
+        if (numberAnswered === 4)
+            return (
+                <div class="restart-container"><div class="restart-button" onClick={() => (setRestart(true))}><p>REINICIAR RECALL</p></div></div>
+            )
     }
 
     return (
         <div class="bottom-bar">
-            {printMsg()}
+            <Msg numberAnswered={numberAnswered} answered={answered} />
             <div class="quantity-answered">
                 <p>{numberAnswered}/4 CONCLUÍDOS</p>
             </div>
             {printAnswers()}
+            {printRestartButton()}
         </div>
     )
 }

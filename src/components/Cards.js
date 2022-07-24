@@ -17,7 +17,7 @@ function shuffle(array) {
     return array;
   }
 
-export default function Cards({increaseAnswered, addAnswer}) {
+export default function Cards({increaseAnswered, addAnswer, restart}) {
     const deck = [
         {
             pergunta: "O que é JSX?",
@@ -62,7 +62,7 @@ export default function Cards({increaseAnswered, addAnswer}) {
         <div class="cards">
             {
                 cards.map((card, key) => (
-                    <Card card={card} index={key} increaseAnswered={increaseAnswered} addAnswer={addAnswer} />
+                    <Card card={card} index={key} increaseAnswered={increaseAnswered} addAnswer={addAnswer} restart={restart} />
                 ))
             }
         </div>
